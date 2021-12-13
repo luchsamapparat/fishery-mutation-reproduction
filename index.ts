@@ -31,10 +31,6 @@ const taskFactory = Factory.define<Task>(() => ({
 
 const task = taskFactory.build();
 
-const user1Task = taskFactory.build({ ...task, user: users[0] });
-const user2Task = taskFactory.build({ ...task, user: users[2] });
-const user3Task = taskFactory.build({ ...task, user: users[3] });
-const user4Task = taskFactory.build({ ...task, user: users[4] });
-const user5Task = taskFactory.build({ ...task, user: users[5] });
+const completedTask = taskFactory.build({ ...task, completed: true });
 
 assert.equal(uniqBy(users, 'id').length, users.length);
